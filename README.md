@@ -24,7 +24,7 @@ checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1ks53RXFzN56Ksjpxspiwy
 
 ## The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
-    <img src='picture/11.jpg' width='1200'/>
+    <img src='picture/11.jpg' width='1400'/>
 </p>
 
 
