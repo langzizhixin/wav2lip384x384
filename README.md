@@ -9,7 +9,7 @@ We have done the following work:
 6. Dear friends, you can load pre training weights for easy subsequent training.
 7. Due to the inability of wav2lip high-definition series application algorithms to achieve high fidelity effects and meet current commercial needs, we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion. Friends who want to train the wav2lip high-definition series, please think carefully before taking action.
 
-# wav2lip-288x288 Project situation
+# wav2lip-384x384 Project situation
 <p align='center'>
   <b>
     <a href="https://www.bilibili.com/video/BV1zK421v7wh/?vd_source=7720ff9e037156b51374d14ee8f76b51">Video </a>
