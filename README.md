@@ -16,7 +16,7 @@ We have done the following work:
     | 
     <a href="https://github.com/langzizhixin">Project Page</a>
     |
-    <a href="https://github.com/langzizhixin/wav2lip_288x288">Code</a> 
+    <a href="https://github.com/langzizhixin/wav2lip-576x576">Code</a> 
   </b>
 </p> 
 
@@ -24,21 +24,9 @@ checkpoints for wav2lip_288x288   https://pan.baidu.com/s/1ks53RXFzN56Ksjpxspiwy
 
 ## The following pictures are comparison images of the training generator training 300000 steps.
 <p align='center'>  
-    <img src='picture/sample-01.jpg' width='600'/>
-    <img src='picture/sample-02.jpg' width='600'/>
-    <img src='picture/sample-03.jpg' width='600'/>
-    <img src='picture/sample-04.jpg' width='600'/>
+    <img src='picture/00.jpg' width='600'/>
 </p>
 
-## The following images show the loss values of training the  discriminator for 300000 steps.
-<p align='center'>  
-    <img src='picture/expert_loss.png' width='600'/>
-</p>
-
-## The following images show the loss values of training the generator for 300000 steps.
-<p align='center'>  
-    <img src='picture/syncnet_loss.png' width='600'/>
-</p>
 
 # Release Plan
 For the wav2lip series, we will continue to train and release higher definition weights in the future.
