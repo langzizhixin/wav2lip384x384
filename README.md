@@ -20,11 +20,11 @@ We have done the following work:
   </b>
 </p> 
 
-checkpoints for wav2lip_288x288   https://pan.baidu.com/s/1ks53RXFzN56Ksjpxspiwyw?pwd=lzzx 
+checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1ks53RXFzN56Ksjpxspiwyw?pwd=lzzx 
 
-## The following pictures are comparison images of the training generator training 300000 steps.
+## The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
-    <img src='picture/00.jpg' width='600'/>
+    <img src='picture/11.jpg' width='600'/>
 </p>
 
 
@@ -38,9 +38,10 @@ Pre training checkpoints for wav2lip_576x576 or 512x512 will be released in June
 # Citing
 Thank the two authors, Thank you for their wonderful work.
 https://github.com/primepake/wav2lip_288x288
+https://github.com/nghiakvnvsd/wav2lip384
 https://github.com/Rudrabha/Wav2Lip
 
 # Disclaimers
-This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.1 , in Chengdu, China .
+This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.30 , in Chengdu, China .
 The above code and weights can only be used for personal/research/non-commercial purposes.
 If you need a higher definition model, please contact me by email 277504483@qq.com , or add WeChat for communication: langzizhixinkeji
