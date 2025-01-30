@@ -14,7 +14,7 @@ We have done the following work:
 # wav2lip-384x384 Project situation
 <p align='center'>
   <b>
-    <a href="https://www.bilibili.com/video/BV1zK421v7wh/?vd_source=7720ff9e037156b51374d14ee8f76b51">Video </a>
+    <a href="https://space.bilibili.com/431556168">Video </a>
     | 
     <a href="https://github.com/langzizhixin">Project Page</a>
     |
@@ -22,7 +22,7 @@ We have done the following work:
   </b>
 </p> 
 
-checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1ks53RXFzN56Ksjpxspiwyw?pwd=lzzx 
+checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2g?pwd=lzzx 
 
 ## The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
