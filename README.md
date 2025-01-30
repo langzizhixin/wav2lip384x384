@@ -36,7 +36,7 @@ Pre training checkpoints for wav2lip_384x384 will be released in February 2025.
 Pre training checkpoints for wav2lip_576x576 or 512x512 will be released in June 2025.
 
 # Citing
-Thank the  authors, Thank you for their wonderful work.
+Thank you to the other three authors, Thank you for their wonderful work.
 
 https://github.com/primepake/wav2lip_288x288
 
