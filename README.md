@@ -6,8 +6,8 @@ We have done the following work:
 3. Trained 1000 people, 50 hours, and over 50000 pieces of data.
 4. Open sourced the checkpoint for a discriminator with 800000 steps and a val_rass of 0.29.
 5. Open sourced a checkpoint for a generator with 600000 steps and a val_rass of 0.27.
-6. Dear friends,we did not release the best generator checkpoint， But the effect of direct reasoning has surpassed all current open source projects and reached a basic commercial level.
-7. Dear friends,we did not release the best generator checkpoint, but we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints for training.
+6. Dear friends,we did not release the best generator checkpoint, However, generators with over 400000 steps have surpassed all open source projects on the market in terms of direct inference performance, and have reached a basic commercial level.
+7. Dear friends,Although we did not release the best generator checkpoint, but we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints for training.
 8. Due to the wav2lip high-definition algorithm series, it cannot achieve high fidelity of faces and teeth, and the training difficulty is relatively high, which cannot adapt well to current commercial needs.. So we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion.
 9. Friends who want to train the wav2lip high-definition series, please think carefully before taking action.
 
