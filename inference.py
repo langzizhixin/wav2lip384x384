@@ -7,7 +7,7 @@ from glob import glob
 import torch, face_detection
 from models import Wav2Lip
 import platform
-
+from torch.cuda.amp import autocast, GradScaler
 parser = argparse.ArgumentParser(description='Inference code to lip-sync videos in the wild using Wav2Lip models')
 
 parser.add_argument('--checkpoint_path', type=str, 
@@ -29,11 +29,11 @@ parser.add_argument('--pads', nargs='+', type=int, default=[0, 10, 0, 0],
 					help='Padding (top, bottom, left, right). Please adjust to include chin at least')
 
 parser.add_argument('--face_det_batch_size', type=int, 
-					help='Batch size for face detection', default=16)
-parser.add_argument('--wav2lip_batch_size', type=int, help='Batch size for Wav2Lip model(s)', default=64)
+					help='Batch size for face detection', default=4)
+parser.add_argument('--wav2lip_batch_size', type=int, help='Batch size for Wav2Lip model(s)', default=8)
 
 parser.add_argument('--resize_factor', default=1, type=int, 
-			help='Reduce the resolution by this factor. Sometimes, best results are obtained at 480p or 720p')
+			help='Reduce the resolution by this factor. Sometimes, best results are obtained at 1080p or 2k')
 
 parser.add_argument('--crop', nargs='+', type=int, default=[0, -1, 0, -1], 
 					help='Crop video to a smaller region (top, bottom, left, right). Applied after resize_factor and rotate arg. ' 
@@ -159,7 +159,7 @@ print('Using {} for inference.'.format(device))
 
 def _load(checkpoint_path):
 	if device == 'cuda':
-		checkpoint = torch.load(checkpoint_path)
+		checkpoint = torch.load(checkpoint_path,weights_only=True)
 	else:
 		checkpoint = torch.load(checkpoint_path,
 								map_location=lambda storage, loc: storage)
@@ -211,6 +211,10 @@ def main():
 			frame = frame[y1:y2, x1:x2]
 
 			full_frames.append(frame)
+			reverse_frames = full_frames[::-1]  #倒放循环
+
+		# Combine forward, backward, and forward frames for looping
+		full_frames = full_frames + reverse_frames + full_frames  #倒放循环
 
 	print ("Number of frames available for inference: "+str(len(full_frames)))
 
@@ -259,7 +263,7 @@ def main():
 		img_batch = torch.FloatTensor(np.transpose(img_batch, (0, 3, 1, 2))).to(device)
 		mel_batch = torch.FloatTensor(np.transpose(mel_batch, (0, 3, 1, 2))).to(device)
 
-		with torch.no_grad():
+		with torch.no_grad():  # 添加混合精度上下文管理器
 			pred = model(mel_batch, img_batch)
 
 		pred = pred.cpu().numpy().transpose(0, 2, 3, 1) * 255.
