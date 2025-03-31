@@ -11,7 +11,7 @@ We have done the following work:
 8. Due to the wav2lip high-definition algorithm series, it cannot achieve high fidelity of faces and teeth, and the training difficulty is relatively high, which cannot adapt well to current commercial needs.. So we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion.
 9. Friends who want to train the wav2lip high-definition series, please think carefully before taking action.
 
-# wav2lip-384x384 Project situation
+## 🏗️ wav2lip-384x384 Project situation
 <p align='center'>
   <b>
     <a href="https://space.bilibili.com/431556168">Video </a>
@@ -29,13 +29,72 @@ checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2
     <img src='picture/11.jpg' width='1400'/>
 </p>
 
+## 🎬 Demo
 
-# Release Plan
+<table class="center">
+  <tr style="font-weight: bolder;text-align:center;">
+        <td width="50%"><b>Original video</b></td>
+        <td width="50%"><b>Lip-synced video</b></td>
+  </tr>
+  <tr>
+    <td>
+      <video src=https://github.com/user-attachments/assets/ff3a84da-dc9b-498a-950f-5c54f58dd5c5 controls preload></video>
+    </td>
+    <td>
+      <video src=https://github.com/user-attachments/assets/150e00fd-381e-4421-a478-a9ea3d1212a8 controls preload></video>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <video src=https://github.com/user-attachments/assets/32c830a9-4d7d-4044-9b33-b184d8e11010 controls preload></video>
+    </td>
+    <td>
+      <video src=https://github.com/user-attachments/assets/84e4fe9d-b108-44a4-8712-13a012348145 controls preload></video>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <video src=https://github.com/user-attachments/assets/7510a448-255a-44ee-b093-a1b98bd3961d controls preload></video>
+    </td>
+    <td>
+      <video src=https://github.com/user-attachments/assets/6150c453-c559-4ae0-bb00-c565f135ff41 controls preload></video>
+    </td>
+  </tr>
+  <tr>
+    <td width=300px>
+      <video src=https://github.com/user-attachments/assets/0f7f9845-68b2-4165-bd08-c7bbe01a0e52 controls preload></video>
+    </td>
+    <td width=300px>
+      <video src=https://github.com/user-attachments/assets/c34fe89d-0c09-4de3-8601-3d01229a69e3 controls preload></video>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <video src=https://github.com/user-attachments/assets/7ce04d50-d39f-4154-932a-ec3a590a8f64 controls preload></video>
+    </td>
+    <td>
+      <video src=https://github.com/user-attachments/assets/70bde520-42fa-4a0e-b66c-d3040ae5e065 controls preload></video>
+    </td>
+  </tr>
+</table>
+
+(Photorealistic videos are filmed by contracted models, and anime videos are from [VASA-1](https://www.microsoft.com/en-us/research/project/vasa-1/) and [EMO](https://humanaigc.github.io/emote-portrait-alive/))
+
+## 📑 Open-source Plan
 For the wav2lip series, we will continue to train and release higher definition weights in the future.
 The plan is as follows:
 Pre training checkpoints for wav2lip_288x288 will be released in January 2025.
 Pre training checkpoints for wav2lip_384x384 will be released in February 2025.
 Pre training checkpoints for wav2lip_576x576 or 512x512 will be released in June 2025.
+- [x] color_checkpoints  
+- [x] final_checkpionts
+- [x] Dataset processing pipeline
+- [x] Training method
+- [ ] Real time Inference 
+- [ ] Advanced Inference
+- [ ] Higher definition commercial checkpoints
+
+
 
 # Citing
 Thank you to the other three authors, Thank you for their wonderful work.
