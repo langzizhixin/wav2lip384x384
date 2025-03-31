@@ -22,7 +22,7 @@ We have done the following work:
   </b>
 </p> 
 
-checkpoints for wav2lip384x384  百度网盘 https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg?pwd=lzzx 
+checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg?pwd=lzzx 
 
 ## 📊 The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
