@@ -4,7 +4,7 @@ We have done the following work:
 1. Add video cutting codes.
 2. Add filelists to generate code.
 3. Trained 1000 people, 50 hours, and over 50000 pieces of data.
-4. Open sourced the checkpoint for a discriminator with 700000 steps and a val_rass of 0.29.
+4. Open sourced the checkpoint for a discriminator with 150000, 700000, 1000000 steps and a val_rass of 0.29.
 5. open-source  the checkpoint for generator with 300000, 500000, and 800000 steps, with val_rass values of 0.35, 0.32, and 0.29 , performs very well and is recommended for use. Of course, it can also be loaded for further training.
 6. Dear friends,we did not release the best generator checkpoint, However, generators with over 500000 steps have surpassed all open source projects on the market in terms of direct inference performance, and have reached a basic commercial level.
 7. Dear friends,Although we did not release the best generator checkpoint, but we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints and final_checkpionts for training, and achieved good results.Especially in solving the problems of profile and occlusion, it is only necessary to load the relevant dataset and continue training.
