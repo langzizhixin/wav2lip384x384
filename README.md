@@ -1,4 +1,4 @@
-# wav2lip_384x384 introduction
+# wav2lip384x384 introduction
 This is a project about talking faces. We use384X384 sized facial images for training, which can generate720p, 1080p, 2k ,4k Digital Humanhuman videos.
 We have done the following work:
 1. Add video cutting codes.
@@ -49,4 +49,4 @@ https://github.com/Rudrabha/Wav2Lip
 # Disclaimers
 This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.30 , in Chengdu, China .
 The above code and weights can only be used for personal/research/non-commercial purposes.
-If you need a higher definition model, please contact me by email 277504483@qq.com , or add WeChat for communication: langzizhixinkeji
+If you need a higher definition model, please contact me by email 277504483@qq.com , or add ours WeChat for communication: langzizhixinkeji
