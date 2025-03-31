@@ -1,4 +1,4 @@
-# wav2lip384x384 introduction
+## 🔥 wav2lip384x384 introduction
 This is a project about talking faces. We use384X384 sized facial images for training, which can generate720p, 1080p, 2k ,4k Digital Humanhuman videos.
 We have done the following work:
 1. Add video cutting codes.
