@@ -76,9 +76,6 @@ checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2
       <video src=https://github.com/user-attachments/assets/70bde520-42fa-4a0e-b66c-d3040ae5e065 controls preload></video>
     </td>
   </tr>
-</table>
-
-(Photorealistic videos are filmed by contracted models, and anime videos are from [VASA-1](https://www.microsoft.com/en-us/research/project/vasa-1/) and [EMO](https://humanaigc.github.io/emote-portrait-alive/))
 
 ## 📑 Open-source Plan
 For the wav2lip series, we will continue to train and release higher definition weights in the future.
