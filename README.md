@@ -14,19 +14,19 @@ We have done the following work:
 ## 🏗️ wav2lip-384x384 Project situation
 <p align='center'>
   <b>
-    <a href="https://space.bilibili.com/431556168">Video </a>
+    <a href="https://www.bilibili.com/video/BV1WsFVePEuz/?spm_id_from=333.1387.upload.video_card.click">Video </a>
     | 
     <a href="https://github.com/langzizhixin">Project Page</a>
     |
-    <a href="https://github.com/langzizhixin/wav2lip-576x576">Code</a> 
+    <a href="https://github.com/langzizhixin/wav2lip384x384">Code</a> 
   </b>
 </p> 
 
-checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2g?pwd=lzzx 
+checkpoints for wav2lip384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2g?pwd=lzzx 
 
 ## 📊 The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
-    <img src='picture/11.jpg' width='1400'/>
+    <img src='picture/11.jpg' width='1600'/>
 </p>
 
 ## 🎬 Demo
@@ -103,7 +103,7 @@ https://github.com/nghiakvnvsd/wav2lip384
 
 https://github.com/Rudrabha/Wav2Lip
 
-# Disclaimers
+## 📖 Disclaimers
 This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.30 , in Chengdu, China .
 The above code and weights can only be used for personal/research/non-commercial purposes.
 If you need a higher definition model, please contact me by email 277504483@qq.com , or add ours WeChat for communication: langzizhixinkeji
