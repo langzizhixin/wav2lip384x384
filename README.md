@@ -5,10 +5,10 @@ We have done the following work:
 2. Add filelists to generate code.
 3. Trained 1000 people, 50 hours, and over 50000 pieces of data.
 4. Open sourced the checkpoint for a discriminator with 700000 steps and a val_rass of 0.29.
-5. Open sourced a checkpoint for a generator with 300000 steps and a val_rass of 0.35 , But the effect is not good, it is recommended not to use it. You can continue training by loading it..
+5. An open-source generator checkpoint with 300000 steps, 500000 steps, 800000 steps, and val_rass values of 0.35, 0.32, and 0.29 has been developed, and the results are very good. It is recommended to use it. Of course, you can continue training by loading it.
 6. Dear friends,we did not release the best generator checkpoint, However, generators with over 500000 steps have surpassed all open source projects on the market in terms of direct inference performance, and have reached a basic commercial level.
-7. Dear friends,Although we did not release the best generator checkpoint, but we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints for training, and achieved good results.
-8. Due to the wav2lip high-definition algorithm series, it cannot achieve high fidelity of faces and teeth, and the training difficulty is relatively high, which cannot adapt well to current commercial needs.. So we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion.
+7. Dear friends,Although we did not release the best generator checkpoint, but we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints and final_checkpionts for training, and achieved good results.Especially in solving the problems of profile and occlusion, it is only necessary to load the relevant dataset and continue training.
+8. Due to the wav2lip high-definition algorithm series, it cannot achieve high fidelity of faces and teeth, and the training difficulty is relatively high, which cannot adapt well to current commercial needs. So we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion.
 9. Friends who want to train the wav2lip high-definition series, please think carefully before taking action.
 
 ## 🏗️ wav2lip-384x384 Project situation
