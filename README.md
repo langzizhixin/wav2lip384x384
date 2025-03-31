@@ -24,7 +24,7 @@ We have done the following work:
 
 checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2g?pwd=lzzx 
 
-## The following pictures are comparison images of the training generator training 500000 steps.
+## 📊 The following pictures are comparison images of the training generator training 500000 steps.
 <p align='center'>  
     <img src='picture/11.jpg' width='1400'/>
 </p>
@@ -76,6 +76,7 @@ checkpoints for wav2lip_384x384   https://pan.baidu.com/s/1eibDdqZXwCmV2yTW33qA2
       <video src=https://github.com/user-attachments/assets/70bde520-42fa-4a0e-b66c-d3040ae5e065 controls preload></video>
     </td>
   </tr>
+</table>
 
 ## 📑 Open-source Plan
 For the wav2lip series, we will continue to train and release higher definition weights in the future.
@@ -93,7 +94,7 @@ Pre training checkpoints for wav2lip_576x576 or 512x512 will be released in June
 
 
 
-# Citing
+## 🙏  Citing
 Thank you to the other three authors, Thank you for their wonderful work.
 
 https://github.com/primepake/wav2lip_288x288
