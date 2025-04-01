@@ -83,7 +83,7 @@ For the wav2lip series, we will continue to train and release higher definition 
 The plan is as follows:
 Pre training checkpoints for wav2lip_288x288 will be released in January 2025.
 Pre training checkpoints for wav2lip_384x384 will be released in February 2025.
-Pre training checkpoints for wav2lip_576x576 or 512x512 will be released in June 2025.
+Pre training checkpoints for wav2lip_576x576 or 512x512 will be released after June 2025.
 - [x] color_checkpoints  
 - [x] final_checkpionts
 - [x] Dataset processing pipeline
