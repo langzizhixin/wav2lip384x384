@@ -38,10 +38,10 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
   </tr>
   <tr>
     <td>
-      <video src=https://github.com/user-attachments/assets/ff3a84da-dc9b-498a-950f-5c54f58dd5c5 controls preload></video>
+      <video src=https://github.com/langzizhixin/wav2lip384x384/blob/main/picture/input-01.mp4 controls preload></video>
     </td>
     <td>
-      <video src=https://github.com/user-attachments/assets/150e00fd-381e-4421-a478-a9ea3d1212a8 controls preload></video>
+      <video src=https://github.com/langzizhixin/wav2lip384x384/blob/main/picture/output-01.mp4 controls preload></video>
     </td>
   </tr>
   <tr>
