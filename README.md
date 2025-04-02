@@ -100,4 +100,5 @@ https://github.com/Rudrabha/Wav2Lip
 ## 📖 Disclaimers
 This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.30 , in Chengdu, China .
 The above code and weights can only be used for personal/research/non-commercial purposes.
+Especially for digital models in the warehouse, if they need to be used for commercial purposes, please contact the model themselves for authorization.
 If you need a higher definition model, please contact us by email 277504483@qq.com, 8081265@qq.com, ajian.justdoit@gmail.com or add ours WeChat for communication: langzizhixinkeji 
