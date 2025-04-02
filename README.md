@@ -55,10 +55,10 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
   </tr>
   <tr>
     <td>
-      <video src=https://github.com/user-attachments/picture/ae070297c9bd492ca45e83e9ecb82efbbe585dd8 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/e1a1e074-1461-4848-8511-c79d875f8bee controls preload></video>
     </td>
     <td>
-      <video src=https://github.com/user-attachments/assets/6150c453-c559-4ae0-bb00-c565f135ff41 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/7eba86fa-69fb-4496-9eaa-41d509cb9123 controls preload></video>
     </td>
   </tr>
   <tr>
