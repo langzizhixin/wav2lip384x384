@@ -41,7 +41,7 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
       <video src=https://github.com/langzizhixin/wav2lip384x384/blob/main/picture/3d%E8%B6%85%E5%86%99%E5%AE%9E.mp4 controls preload></video>
     </td>
     <td>
-      <video src=https://github.com/langzizhixin/wav2lip384x384/blob/main/picture/output-01.mp4 controls preload></video>
+      <video src='picture/output-01.mp4' controls preload></video>
     </td>
   </tr>
   <tr>
