@@ -82,8 +82,8 @@ Pre training checkpoints for wav2lip_576x576 or 512x512 will be released after J
 - [x] final_checkpionts
 - [x] Dataset processing pipeline
 - [x] Training method
+- [x] Advanced Inference
 - [ ] Real time Inference 
-- [ ] Advanced Inference
 - [ ] Higher definition commercial checkpoints
 
 
@@ -100,4 +100,4 @@ https://github.com/Rudrabha/Wav2Lip
 ## 📖 Disclaimers
 This repositories made by langzizhixin from Langzizhixin Technology company 2025.1.30 , in Chengdu, China .
 The above code and weights can only be used for personal/research/non-commercial purposes.
-If you need a higher definition model, please contact me by email 277504483@qq.com , or add ours WeChat for communication: langzizhixinkeji
+If you need a higher definition model, please contact me by email 277504483@qq.com, 8081265@qq.com, ajian.justdoit@gmail.com or add ours WeChat for communication: langzizhixinkeji 
