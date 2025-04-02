@@ -32,7 +32,7 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
 
 ## 🎬 Demo
 <video width="900" height="1600" controls>
-  <source src="https://github.com/langzizhixin/wav2lip384x384/blob/ae070297c9bd492ca45e83e9ecb82efbbe585dd8/picture/999.mp4" type="video/mp4">
+  <source src="https://github.com/langzizhixin/wav2lip384x384/blob/picture/ae070297c9bd492ca45e83e9ecb82efbbe585dd8" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -66,7 +66,7 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
   </tr>
   <tr>
     <td>
-      <video src=https://github.com/user-attachments/assets/7510a448-255a-44ee-b093-a1b98bd3961d controls preload></video>
+      <video src=https://github.com/user-attachments/picture/ae070297c9bd492ca45e83e9ecb82efbbe585dd8 controls preload></video>
     </td>
     <td>
       <video src=https://github.com/user-attachments/assets/6150c453-c559-4ae0-bb00-c565f135ff41 controls preload></video>
