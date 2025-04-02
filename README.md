@@ -30,6 +30,11 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
 </p>
 
 ## 🎬 Demo
+<video width="640" height="480" controls>
+  <source src="https://github.com/langzizhixin/wav2lip384x384/blob/main/picture/3d%E8%B6%85%E5%86%99%E5%AE%9E.mp4?raw=true" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 <table class="center">
   <tr style="font-weight: bolder;text-align:center;">
