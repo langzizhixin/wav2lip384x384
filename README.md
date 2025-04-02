@@ -63,20 +63,13 @@ checkpoints for wav2lip384x384   https://pan.baidu.com/s/1NiSEdrlRVZM_6SD4Igdtlg
   </tr>
   <tr>
     <td width=300px>
-      <video src=https://github.com/user-attachments/assets/0f7f9845-68b2-4165-bd08-c7bbe01a0e52 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/8e5f6a2a-9df8-489d-bcc4-8b58ded659cf controls preload></video>
     </td>
     <td width=300px>
-      <video src=https://github.com/user-attachments/assets/c34fe89d-0c09-4de3-8601-3d01229a69e3 controls preload></video>
+      <video src=https://github.com/user-attachments/assets/5a66a980-2e3f-4a47-9722-4aec034477e2 controls preload></video>
     </td>
   </tr>
   <tr>
-    <td>
-      <video src=https://github.com/user-attachments/assets/7ce04d50-d39f-4154-932a-ec3a590a8f64 controls preload></video>
-    </td>
-    <td>
-      <video src=https://github.com/user-attachments/assets/70bde520-42fa-4a0e-b66c-d3040ae5e065 controls preload></video>
-    </td>
-  </tr>
 </table>
 
 ## 📑 Open-source Plan
