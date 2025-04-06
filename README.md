@@ -10,7 +10,7 @@ We have done the following work:
 7. Dear friends, we released the best discriminator checkpoint, you need load pre training weights for easy subsequent training, many people have loaded our color_checkpoints and final_checkpionts for training, and achieved good results.Especially when solving profile and occlusion problems, it is only necessary to load the relevant dataset and continue training.
 8. Due to the wav2lip high-definition algorithm series, it cannot achieve high fidelity of faces and teeth, and the training difficulty is relatively high, which cannot adapt well to current commercial needs. So we have changed the algorithm for commercial digital humans and adopted new algorithms such as diffusion.
 9. Friends who want to train the wav2lip high-definition series, please think carefully before taking action.
-10.If you want to achieve better reasoning results, then refer to my demo video for shooting.
+10. If you want to achieve better reasoning results, then refer to my demo video for shooting.
 
 ## 🏗️ wav2lip-384x384 Project situation
 <p align='center'>
