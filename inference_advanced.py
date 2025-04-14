@@ -240,9 +240,9 @@ def main():
             # 对resize后的蒙版进行二值化（确保只有纯黑和纯白）
             _, binary_mask = cv2.threshold(resized_mask, 127, 255, cv2.THRESH_BINARY)
             binary_mask = binary_mask.astype(np.uint8)
-            # 计算距离变换，得到每个像素到边缘的距离（羽化宽度设置为12像素）
+            # 计算距离变换，得到每个像素到边缘的距离（羽化宽度设置为12，15，20，30等像素，请根据自己实际需求调整）
             dist = cv2.distanceTransform(binary_mask, cv2.DIST_L2, 5)
-            feather_radius = 12.0
+            feather_radius = 20
             alpha = np.clip(dist / feather_radius, 0, 1)
             # 对 alpha 进行高斯平滑，进一步软化边缘
             alpha = cv2.GaussianBlur(alpha, (5,5), 0)
