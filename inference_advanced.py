@@ -1,3 +1,4 @@
+# 请根据自己视频的实际情况，调整pads参数和羽化参数。
 from os import listdir, path
 import numpy as np
 import scipy, cv2, os, sys, argparse, audio
