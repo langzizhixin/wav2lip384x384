@@ -296,7 +296,7 @@ def sync_lips():
         try:
             # 调用Wav2Lip推理代码
             wav2lip_main(argparse.Namespace(
-                checkpoint_path='checkpoints/wav2lip_gan.pth',  # 指定你的模型检查点路径
+                checkpoint_path='final_checkpionts/checkpoint_step001280000.pth',  # 指定你的模型检查点路径
                 face=video_path,
                 audio=audio_path,
                 outfile=output_path,
