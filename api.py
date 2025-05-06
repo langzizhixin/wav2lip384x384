@@ -14,14 +14,16 @@ import json
 import platform
 import torch, face_detection
 from torch.cuda.amp import autocast, GradScaler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 #===============推理代码部分=================#
 
 app = Flask(__name__)
 
-# 配置上传文件夹和允许的文件格式
+# 配置上传文件夹和允许文件格式
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'mp4', 'mov', 'avi', 'wav', 'jpg', 'png', 'jpeg'}
+app.config['CHECKPOINT_PATH'] = 'final_checkpionts/checkpoint_step001320000.pth'  # 改进后的模型路径配置
 
 # 创建上传文件夹
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -194,7 +196,7 @@ def wav2lip_main(api_args):
             if args.resize_factor > 1:
                 frame = cv2.resize(frame, (frame.shape[1] // args.resize_factor, frame.shape[0] // args.resize_factor))
             if args.rotate:
-                frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+                frame = cv2.rotate(frame, cv2.cv2.ROTATE_90_CLOCKWISE)
             y1, y2, x1, x2 = args.crop
             if x2 == -1: 
                 x2 = frame.shape[1]
@@ -202,8 +204,8 @@ def wav2lip_main(api_args):
                 y2 = frame.shape[0]
             frame = frame[y1:y2, x1:x2]
             full_frames.append(frame)
-        reverse_frames = full_frames[::-1]
-        full_frames = full_frames + reverse_frames + full_frames
+            reverse_frames = full_frames[::-1]  # 倒放循环
+        full_frames = full_frames + reverse_frames + full_frames  # 倒放循环
 
     print("Number of frames available for inference: " + str(len(full_frames)))
     if not args.audio.endswith('.wav'):
@@ -240,6 +242,11 @@ def wav2lip_main(api_args):
             print("Model loaded")
             frame_h, frame_w = full_frames[0].shape[:-1]
             out = cv2.VideoWriter('temp/result.avi', cv2.VideoWriter_fourcc(*'DIVX'), fps, (frame_w, frame_h))
+            # 加载蒙版，要求白色部分为生成区域，黑色为透明
+            mask_path = os.path.join('.', 'models', 'mask.png')
+            mask_img = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+            if mask_img is None:
+                raise ValueError("Mask image not found at " + mask_path)
 
         img_batch = torch.FloatTensor(np.transpose(img_batch, (0, 3, 1, 2))).to(device)
         mel_batch = torch.FloatTensor(np.transpose(mel_batch, (0, 3, 1, 2))).to(device)
@@ -249,17 +256,57 @@ def wav2lip_main(api_args):
         
         for p, f, c in zip(pred, frames, coords):
             y1, y2, x1, x2 = c
+            # 调整预测结果到人脸区域尺寸
             p = cv2.resize(p.astype(np.uint8), (x2 - x1, y2 - y1))
+            
+            # 使用蒙版进行融合：先将蒙版resize到当前人脸区域的尺寸
+            resized_mask = cv2.resize(mask_img, (x2 - x1, y2 - y1), interpolation=cv2.INTER_LINEAR)
+            # 对resize后的蒙版进行二值化（确保只有纯黑和纯白）
+            _, binary_mask = cv2.threshold(resized_mask, 127, 255, cv2.THRESH_BINARY)
+            binary_mask = binary_mask.astype(np.uint8)
+            # 计算距离变换，得到每个像素到边缘的距离（羽化宽度设置为12像素）
+            dist = cv2.distanceTransform(binary_mask, cv2.DIST_L2, 5)
+            # feather_radius = 12.5
+            feather_radius = 20
+            alpha = np.clip(dist / feather_radius, 0, 1)
+            # 对 alpha 进行高斯平滑，进一步软化边缘
+            alpha = cv2.GaussianBlur(alpha, (5,5), 0)
             
             original_face = f[y1:y2, x1:x2].astype(np.float32)
             generated_face = p.astype(np.float32)
-            f[y1:y2, x1:x2] = generated_face
+            blended_face = (alpha[..., None] * generated_face + (1 - alpha[..., None]) * original_face).astype(np.uint8)
+            
+            f[y1:y2, x1:x2] = blended_face
             out.write(f)
     out.release()
     command = 'ffmpeg -y -i {} -i {} -strict -2 -q:v 1 {}'.format(args.audio, 'temp/result.avi', args.outfile)
     subprocess.call(command, shell=platform.system() != 'Windows')
-
+    
 #===============API接口部分=================#
+
+# 添加资源清理函数
+def cleanup_old_tasks():
+    upload_folder = app.config['UPLOAD_FOLDER']
+    max_task_age_hours = 24  # 设置任务的最大保存时间为24小时
+    current_time = datetime.now()
+    
+    for task_id in listdir(upload_folder):
+        task_dir = os.path.join(upload_folder, task_id)
+        if not os.path.isdir(task_dir):
+            continue
+            
+        # 获取任务文件夹的创建时间
+        task_time = datetime.fromtimestamp(os.path.getctime(task_dir))
+        task_age = (current_time - task_time).total_seconds() / 3600  # 转换为小时
+        
+        if task_age > max_task_age_hours:
+            shutil.rmtree(task_dir)
+            print(f"Deleted old task directory: {task_dir}")
+
+# 启动定时清理任务
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=cleanup_old_tasks, trigger="interval", hours=1)
+scheduler.start()
 
 @app.route('/sync_lips', methods=['POST'])
 def sync_lips():
@@ -296,7 +343,7 @@ def sync_lips():
         try:
             # 调用Wav2Lip推理代码
             wav2lip_main(argparse.Namespace(
-                checkpoint_path='final_checkpionts/checkpoint_step001280000.pth',  # 指定你的模型检查点路径
+                checkpoint_path=app.config['CHECKPOINT_PATH'],  # 使用配置中的模型路径
                 face=video_path,
                 audio=audio_path,
                 outfile=output_path,
@@ -383,5 +430,34 @@ def get_result(task_id):
     # 返回视频文件
     return send_from_directory(task_dir, 'result.mp4', as_attachment=True)
 
+# 添加错误处理
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return jsonify({
+        'status': 'error',
+        'message': str(e)
+    }), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+    @app.route('/')
+    def home():
+        return "Wav2Lip API is running!"
+    
+    
+    
+
+    
+    
+    
+# 示例使用流程
+# 启动服务：
+# python app.py
+# 上传任务：
+# curl -X POST -F "video=@input_video.mp4" -F "audio=@input_audio.wav" http://localhost:5000/sync_lips
+# 查询状态：
+# curl http://localhost:5000/task_status/<task_id>
+# 下载结果：
+# curl -O http://localhost:5000/results/<task_id>/result.mp4
+
+# 总结来说，这段代码实现了一个功能完善的唇形同步API服务，适用于各种需要音视频同步的场景。
