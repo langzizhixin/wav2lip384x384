@@ -84,7 +84,7 @@ Pre training checkpoints for wav2lip_576x576 or 512x512 will be released after J
 - [x] Dataset processing pipeline
 - [x] Training method
 - [x] Advanced Inference
-- [ ] Real time Inference 
+- [x] Real time Inference 
 - [ ] Higher definition commercial checkpoints
 
 
